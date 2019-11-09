@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <BorderPane prefHeight="300" prefWidth="500">
+         <top>
+            <MenuBar>
+               <Menu text="File" >
+                  <MenuItem fx:id="mbtnNew" text="New" accelerator="Ctrl+N" onAction="#NewFile"></MenuItem>
+                  <MenuItem fx:id="mbtnOpen" text="Open.." accelerator="Ctrl+O" onAction="#OpenNewFile"></MenuItem>
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem fx:id="mbtnSave" text="Save" accelerator="Ctrl+S" onAction="#SaveFile"></MenuItem>
+                  <MenuItem fx:id="mbtnSaveAs" text="Save as.." onAction="#SaveAs"></MenuItem>
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem fx:id="mbtnPrint" text="Print.." accelerator="Ctrl+P"></MenuItem>
+                  <MenuItem fx:id="mbtnExit" text="Exit" onAction="#ExitApp"></MenuItem>
+               </Menu>
+               <Menu text="Edit" >
+                  <MenuItem fx:id="mbtnUndo" text="Undo" accelerator="Ctrl+Z" onAction="#Undo"></MenuItem>
+                  <MenuItem fx:id="mbtnRedo" text="Redo" accelerator="Ctrl+Y" onAction="#Redo"></MenuItem>
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem fx:id="mbtnCut" text="Cut" accelerator="Ctrl+X" onAction="#Cut"></MenuItem>
+                  <MenuItem fx:id="mbtnCopy" text="Copy" accelerator="Ctrl+C" onAction="#Copy"></MenuItem>
+                  <MenuItem fx:id="mbtnPaste" text="Paste" accelerator="Ctrl+V" onAction="#Paste"></MenuItem>
+                  <MenuItem fx:id="mbtnDel" text="Delete" accelerator="Ctrl+D" onAction="#Delete"></MenuItem>
+                  <MenuItem fx:id="mbtnSelect" text="Select All" accelerator="Ctrl+A" onAction="#SelectAll"></MenuItem>
+                  <MenuItem fx:id="mbtnFind" text="Find And Replace..."></MenuItem>
+               </Menu>
+               <Menu text="View" >
+                  <CheckMenuItem fx:id="mchbWrap" text="Word Wrap" onAction="#WrapChange"></CheckMenuItem>
+                  <CheckMenuItem fx:id="mchbTrun" text="Truncation"></CheckMenuItem>
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem fx:id="mbtnFont" text="Font..." onAction="#SelectFont"></MenuItem>
+                  <MenuItem fx:id="mbtnColor" text="Color..." onAction="#SelectColor"></MenuItem>
+               </Menu>
+               <Menu text="Help" >
+                  <MenuItem fx:id="mbtnHelp" text="View Help..."></MenuItem>
+                  <MenuItem fx:id="mbtnAbout" text="About Notepad..." onAction="#About"></MenuItem>
+               </Menu>
+            </MenuBar>
+         </top>
+         <center>
+            <TextArea fx:id="taResult">
+
+            </TextArea>
+         </center>
+      </BorderPane>
+   </children>
+</GridPane>
